@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { NativeModules, StyleSheet } from 'react-native';
 
 export const defaultStyles = StyleSheet.create({
     viewContainer: {
@@ -35,11 +35,11 @@ export const defaultStyles = StyleSheet.create({
     },
     chevronUp: {
         marginLeft: 11,
-        transform: [{ translateY: 4 }, { rotate: '-45deg' }],
+        transform: [{ translateY: 4 }, NativeModules.I18nManager.isRTL ? { rotate: '45deg' } : { rotate: '-45deg' }],
     },
     chevronDown: {
         marginLeft: 22,
-        transform: [{ translateY: -5 }, { rotate: '135deg' }],
+        transform: [{ translateY: -5 }, NativeModules.I18nManager.isRTL ? { rotate: '-135deg' } : { rotate: '135deg' }],
     },
     chevronActive: {
         borderColor: '#007aff',
