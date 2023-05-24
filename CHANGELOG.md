@@ -1,3 +1,15 @@
+## 8.0.7
+
+##### Bugfix
+
+-   Added support for `testID` prop on iOS items.
+
+## 8.0.6
+
+##### Bugfix
+
+-   Added support for `contentDescription` prop on Android items.
+
 ## 8.0.4
 
 ##### Bugfix
