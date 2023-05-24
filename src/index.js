@@ -10,12 +10,13 @@ export default class RNPickerSelect extends PureComponent {
         onValueChange: PropTypes.func.isRequired,
         items: PropTypes.arrayOf(
             PropTypes.shape({
-                label: PropTypes.string.isRequired,
-                value: PropTypes.any.isRequired,
-                inputLabel: PropTypes.string,
-                key: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
                 color: PropTypes.string,
                 contentDescription: PropTypes.string,
+                inputLabel: PropTypes.string,
+                key: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+                label: PropTypes.string.isRequired,
+                testID: PropTypes.string,
+                value: PropTypes.any.isRequired,
             })
         ).isRequired,
         value: PropTypes.any, // eslint-disable-line react/forbid-prop-types
@@ -266,11 +267,12 @@ export default class RNPickerSelect extends PureComponent {
         return items.map((item) => {
             return (
                 <Picker.Item
-                    label={item.label}
-                    value={item.value}
-                    key={item.key || item.label}
                     color={item.color}
                     contentDescription={item.contentDescription}
+                    key={item.key || item.label}
+                    label={item.label}
+                    testID={item.testID}
+                    value={item.value}
                 />
             );
         });
