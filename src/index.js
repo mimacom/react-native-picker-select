@@ -15,6 +15,7 @@ export default class RNPickerSelect extends PureComponent {
                 inputLabel: PropTypes.string,
                 key: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
                 color: PropTypes.string,
+                testID: PropTypes.string,
             })
         ).isRequired,
         value: PropTypes.any, // eslint-disable-line react/forbid-prop-types
@@ -269,6 +270,7 @@ export default class RNPickerSelect extends PureComponent {
                     value={item.value}
                     key={item.key || item.label}
                     color={item.color}
+                    testID={item.testID}
                 />
             );
         });
